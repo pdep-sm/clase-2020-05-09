@@ -3,13 +3,13 @@ import Library
 import Test.Hspec
 
 programaAvancePC :: Programa
-programaAvancePC = nop . nop . nop
+programaAvancePC = [nop , nop , nop]
 
 programaSuma :: Programa
-programaSuma = add' . lodv 22 . swap . lodv 10
+programaSuma = [lodv 10, swap, lodv 22, add]
 
 programaDivision :: Programa
-programaDivision = division' . lod 1 . swap . lod 2 . str 2 0 . str 1 2
+programaDivision = [str 1 2, str 2 0, division', swap, lod 1, lod 2]
 
 fp20 = xt8088 {
   acumuladorA = 7,
